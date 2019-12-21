@@ -1,0 +1,45 @@
+body {
+	background-image: url("../image/Background2.804dd182d02c.jpg");
+	background-repeat: repeat-y;
+}
+li {
+	list-style: none;
+}
+input[type="text"] {
+	width:300px;
+	padding:8px;
+	margin:5px;
+	border-radius:5px;
+	border:1px solid #dddddd;
+}
+input[type="email"] {
+	width:300px;
+	padding:8px;
+	margin:5px;
+	border-radius:5px;
+	border:1px solid #dddddd;
+}
+input[type="button"] {
+	width:150px;
+	border-radius:5px;
+	background-color:tomato;
+	color:white;
+}
+input[type="submit"] {
+	width:150px;
+	border-radius:5px;
+	background-color:tomato;
+	color:white;
+}
+input[type="button"]:hover {
+	width:150px;
+	border-radius:5px;
+	background-color:#A00000;
+	color:white;
+}
+input[type="submit"]:hover {
+	width:150px;
+	border-radius:5px;
+	background-color:#A00000;
+	color:white;
+}

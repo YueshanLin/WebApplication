@@ -1,0 +1,8 @@
+{
+	"comment": "{{ post.comment }}",
+	"user": "{{ post.user }}",
+	"html": "{{ post.html }}",
+	"time": "{{ post.time }}",
+	"id": "{{ post.id }}"
+}
+

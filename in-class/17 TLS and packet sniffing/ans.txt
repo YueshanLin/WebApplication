@@ -1,0 +1,4 @@
+1. 2 rounds
+(1) GET /webapps/private-todo-list/ HTTP1.1
+	HTTP/1.1 3022 Found
+(2) Get /webapps/private-todo-list/login?next=webapps/private-todo-list/ HTTP/1.1

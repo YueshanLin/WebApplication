@@ -1,0 +1,6 @@
+Name: Yueshan Lin	AndrewID: yueshanl
+Fraction: Wenhao Ma: 35%, Yilin Liu: 25%, Yueshan Lin: 20%, Chenyang Li: 20%
+My contribution: 
+Designed the Model API in the backend, including mahjong block, user info, room info;
+Participated in part of the web socket development; Fulfilled the audio effects of the game;
+Designed Game Finishing effects; Fulfilled players ranking functions and UI design. 

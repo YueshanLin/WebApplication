@@ -1,0 +1,34 @@
+{% extends "Base.html" %}
+
+{% block title %}Logout Page{% endblock %}
+
+{% block css_file %}<link rel="stylesheet" href="../static/css/home_style.css">{% endblock %}
+	
+{% block tab %}
+	<a class="nav-link" href="{% url 'home' %}">Home</a>
+		<a class="nav-link" href="{% url 'login' %}">Login</a>
+		<a class="nav-link" href="{% url 'register' %}">Register</a>
+{% endblock %}
+
+{% block content %}
+	<br>
+	<ul>
+		<li><h1>You already logged out</h1></li>
+	</ul>
+
+	<ul>
+		<li>
+			<div class="instruction">New User?</div>
+			<div>
+				<form action="{% url 'register' %}">
+					<input type="submit" value="Register" class="button">
+				</form></div> 
+			<div class="instruction">Already Have An Account?</div>
+			<div>
+				<form action="{% url 'login' %}">
+					<input type="submit" value="Login" class="button">
+				</form>
+			</div>
+		</li>
+	</ul>
+{% endblock %}

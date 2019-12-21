@@ -1,0 +1,1 @@
+web: gunicorn grumblr.wsgi --log-file -

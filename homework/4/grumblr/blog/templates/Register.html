@@ -1,0 +1,38 @@
+{% extends "Base.html" %}
+
+{% block title %}Registration Page{% endblock %}
+
+{% block css_file %}<link rel="stylesheet" href="../static/css/register_style.css">{% endblock %}
+	
+{% block tab %}
+	<a class="nav-link" href="{% url 'home' %}">Home</a>
+		<a class="nav-link" href="{% url 'login' %}">Login</a>
+		<a class="nav-link" href="{% url 'register' %}">Register</a>
+{% endblock %}
+
+{% block content %}
+	<br>
+	<ul>
+		<li><h1>Register</h1></li>
+	</ul>
+
+	<ul>
+	{% for error in register_form.non_field_errors %}
+		<li> {{ error }} </li>
+	{% endfor %}
+	</ul>
+
+	<ul>
+		<li>
+			<form action="{% url 'register' %}" method="POST"> 
+
+				{% for field in register_form.visible_fields %}
+				{{ field.label_tag }} <br>
+				{{ field }} {{ field.errors }}<br>
+				{% endfor %}
+				<div><input type="submit"></div>
+				{% csrf_token %}
+			</form>
+		</li>
+	</ul>
+{% endblock %}

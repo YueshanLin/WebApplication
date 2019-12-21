@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+	<div class="outerFrame">
+		<div class="displayFrame">
+			<div class="displayContent">
+				{% if digit %}
+				{{digit}}
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="buttonFrame">
+			<table align="center">
+				<tr>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="7" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="8" name="number" class= "digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="9" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="+" name="operator" class="operator">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="4" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="5" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="6" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="-" name="operator" class="operator">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="3" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="2" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="1" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="×" name="operator" class="operator">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="0" name="number" class="digit">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="=" name="equal" class="operator">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+					<td>
+						<form action="calculator.html" method="post">
+							<input type="submit" value="÷" name="operator" class="operator">
+							<input type="hidden" value={{previous}} name="pre">
+							{% csrf_token %}
+						</form>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

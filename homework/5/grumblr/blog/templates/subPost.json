@@ -1,0 +1,9 @@
+{
+	"comment": "{{ subPost.comment }}",
+	"user": "{{ subPost.user }}",
+	"html": "{{ subPost.html }}",
+	"time": "{{ subPost.time }}",
+	"post_id": "{{ subPost.post.id }}",
+	"id": "{{ subPost.id }}"
+}
+

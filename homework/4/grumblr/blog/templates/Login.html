@@ -1,0 +1,40 @@
+{% extends "Base.html" %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block css_file %}<link rel="stylesheet" href="../static/css/login_style.css">{% endblock %}
+	
+{% block tab %}
+	<a class="nav-link" href="{% url 'home' %}">Home</a>
+	<a class="nav-link" href="{% url 'login' %}">Login</a>
+	<a class="nav-link" href="{% url 'register' %}">Register</a>
+{% endblock %}	
+
+{% block content %}
+	<ul>
+		<li><h1>Login</h1></li>
+	</ul>
+
+	<ul>
+	{% for error in login_form.non_field_errors %}
+		<li> {{ error }} </li>
+	{% endfor %}
+	</ul>
+
+	<ul>
+		<li>
+			<div>
+				<form action="{% url 'login' %}" method="post"> 
+					
+					{% for field in login_form.visible_fields %}
+					{{ field.label_tag }}<br>
+					{{ field }} {{ field.errors }}<br>
+					{% endfor %}
+					<input type="submit">
+					{% csrf_token %}
+				</form>
+				<br>
+			</div>
+		</li>
+	</ul>	
+{% endblock %}

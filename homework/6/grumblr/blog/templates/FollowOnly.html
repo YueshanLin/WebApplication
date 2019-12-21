@@ -1,0 +1,54 @@
+{% extends "Base.html" %}
+
+{% block title %}Forums Page{% endblock %}
+
+{% block css_file %}{% load static %}<link rel="stylesheet" href="{% static 'css/forum_style.css' %}">{% endblock %}
+	
+{% block tab %}
+	{% if user %}
+	<a class="nav-link" href="{% url 'profile' user.id %}"> Your Profile</a>
+	{% endif %}
+	<a class="nav-link" href="{% url 'edit' %}">Edit Profile</a>
+	<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+	<br>
+	<ul>
+		<h1>Forums</h1>
+		<h2>posts by the users you follow</h2>
+		<a href="{% url 'forum' %}">
+			<button>See all posts</button>
+		</a>
+	</ul>
+
+	<ul>
+	{% for post in posts %}
+		<li>
+			<div class="comment_img">
+				<a href="{% url 'profile' post.user.id %}"><!--<img src="{% url 'photo' post.user.id %}" class="profile_img" alt="Profile">--><img src="{% url 'photo' post.user.id %}" class="profile_img" alt="Profile"></a>
+				<a href="{% url 'profile' post.user.id %}"> {{ post.user.username }} </a>
+			</div>
+			<div class="comment_txt">
+				{{ post.comment }}
+				<span class="time">{{ post.time }}</span>
+				<a href="{% url 'follow' post.user.id %}"><button>Follow</button></a><a href="{% url 'unfollow' post.user.id %}"><button>Unfollow</button></a>
+			</div>
+		</li>
+	{% endfor %}
+		<li>
+			<form action="{% url 'forum' %}" method="post">
+				<input type="text" name="comment">
+				<input type="submit">
+				{% csrf_token %}
+			</form>
+		</li>
+	</ul>
+
+
+	<ul>
+	{% for error in errors %}
+		<li>{{error}}</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

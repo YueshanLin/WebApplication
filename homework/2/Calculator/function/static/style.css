@@ -1,0 +1,68 @@
+table {
+	width:100%;
+	height:100%;
+}
+
+input[type="submit"] {
+	width:80%;
+	height:75%;
+	font-size:30px;
+	font-style:Monospace;
+
+	padding:10px;
+	margin:12px;
+
+	border-radius:20px;
+	border:2px solid black;
+
+	text-align:center;
+	vertical-align:center;
+}
+
+.outerFrame {
+	position:absolute;
+	width:40%;
+	height:60%;
+	border:1px solid black;
+	border-radius:10px;
+}
+
+.displayFrame {
+	margin:8px;
+	border:2px solid black;
+	background-color:#D5E0CB;
+	width:95%;
+	height:20%;
+}
+
+.displayContent {
+	margin:8px;
+	text-align:right;
+	vertical-align:center;
+	font-size:50px;
+	font-style:Monospace;
+}
+
+.buttonFrame {
+	margin:8px;
+	position:absolute;
+	height:70%;
+	width:95%;
+	text-align:center;
+}
+
+.digit {
+	background-color:#D5E0CB;
+}
+
+.digit:hover {
+	background-color:#5D7D65;
+}
+
+.operator {
+	background-color:#FBDCDC;
+}
+
+.operator:hover {
+	background-color:#9E4C5C;
+}

@@ -1,0 +1,35 @@
+body {
+	background-image: url("https://s3.us-east-2.amazonaws.com/grumblr-yueshanl2-images/image/Background3.JPG");
+	background-repeat: repeat-y;
+	background-position: top right;
+}
+li {
+	list-style:none;
+}
+img {
+	width:150px;
+	height:150px;
+	border-radius:10px;
+}
+.profileName {
+	font-size: 20px;
+	padding: 8px;
+}
+.nameDisplayed {
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+	width:200px;
+	font-size: 20px;
+	padding: 8px;
+}
+.comment {
+	font-size: 16px;
+    padding: 8px;
+    border: 1px solid #dddddd;
+    border-radius:8px;
+	width:800px;
+}
+.time {
+	color:#c0c0c0;
+	font-style:italic;
+}

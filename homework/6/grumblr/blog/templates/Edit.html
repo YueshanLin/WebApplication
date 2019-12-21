@@ -1,0 +1,41 @@
+{% extends "Base.html" %}
+
+{% block title %}Profile Page{% endblock %}
+
+{% block css_file %}
+{% load static %}<link rel="stylesheet" href="{% static 'css/profile_style.css' %}">
+{% endblock %}
+	
+{% block tab %}
+	<a class="nav-link" href="{% url 'forum' %}">Forums</a> 
+	<a class="nav-link" href="{% url 'profile' request.user.id %}"> Your Profile</a>
+	<a class="nav-link" href="{% url 'home' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+	<br>	
+	<ul>
+		<h1>Edit Profile</h1>
+	</ul>
+
+	<div>
+		<a href="reset"><button>Reset Password</button></a>
+	</div>
+	<div class="row">
+			<ul>
+				<li>
+					<img src= "{% url 'photo' user.id %}" alt="Profile">
+				</li>
+				<li>
+					<form action="{% url 'edit' %}" method="POST" enctype="multipart/form-data">
+						{% for field in edit_form.visible_fields %}
+						{{ field.label_tag }}<br>
+						{{ field }}{{ field.errors }}<br>
+						{% endfor %}
+						<input type='submit'>
+						{% csrf_token %}
+					</form>
+				</li>
+			</ul>
+	</div>
+{% endblock %}

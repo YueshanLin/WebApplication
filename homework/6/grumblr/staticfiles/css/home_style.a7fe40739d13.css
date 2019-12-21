@@ -1,0 +1,19 @@
+body {
+	background-image: url("../image/Background2.804dd182d02c.jpg");
+	background-repeat: repeat-y;
+}
+li {
+	list-style:none;
+}
+.instruction {
+	font-size: 20px;
+	padding: 8px;
+}
+.button {
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+	width:200px;
+	font-size: 20px;
+	padding: 8px;
+	background-color:tomato;
+}

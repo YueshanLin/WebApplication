@@ -1,0 +1,59 @@
+{% extends "Base.html" %}
+
+{% block title %}Profile Page{% endblock %}
+
+{% block css_file %}<link rel="stylesheet" href="../static/css/profile_style.css">{% endblock %}
+	
+{% block tab %}
+	<a class="nav-link" href="{% url 'forum' %}">Forums</a> <!--href omitted-->
+	<a class="nav-link" href="{% url 'edit' %}">Edit Profile</a>
+	<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+	<br>
+	<ul>
+		<li><h1>Profile</h1></li>
+	</ul>
+
+	<div class="row">
+		<div class="col-sm-2">
+			<ul>
+				<li>{% if userProfile %}
+					<img src= "{% url 'photo' userProfile.user.id %}" alt="Profile">
+					{% endif %}
+				</li>
+				<li>
+					
+					{% if userProfile %}
+					<div class="profileName">First Name</div>
+					<div class="nameDisplayed">{{ userProfile.user.first_name }}</div> 
+					<div class="profileName">Last Name</div>
+					<div class="nameDisplayed">{{ userProfile.user.last_name }}</div>
+					<div class="profileName">User Name</div>
+					<div class="nameDisplayed">{{ userProfile.user.username }}</div> 
+					<div class="profileName">Email</div>
+					<div class="nameDisplayed">{{ userProfile.user.email }}</div> 
+					<div class="profileName">Age</div>
+					<div class="nameDisplayed">{{ userProfile.age }}</div> 
+					<div class="profileName">biography</div>
+					<div class="nameDisplayed">{{ userProfile.biography }}</div> 
+					{% endif %}
+				</li>
+			</ul>
+		</div>
+		<div class="col-sm-10">
+			<ul>
+			{% for post in posts %}
+				<li>
+					<div class="comment">
+						{{ post.comment }}
+						<span class="time"> {{ post.time }} </span>
+					</div>
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "Base.html" %}
+
+{% block title %}Forum Page{% endblock %}
+
+{% block css_file %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/forum_style.css' %}">{% endblock %}
+
+
+
+{% block tab %}
+{% if user %}
+<a class="nav-link" href="{% url 'profile' user.id %}"> Your Profile</a>
+{% endif %}
+<a class="nav-link" href="{% url 'edit' %}">Edit Profile</a>
+<a class="nav-link" href="{% url 'logout' %}">Logout</a>
+{% endblock %}
+
+{% block content %}
+<br>
+<ul>
+	<h1>Forums</h1>
+	<a href="{% url 'showFollow' %}">
+		<button>See the posts by the users you follow</button>
+	</a>
+</ul>
+
+<ul id="posts">
+
+</ul>
+
+<ul>
+	<li>
+		<input type="text" id="writePost">
+		<button id="submitPost">Submit</button>
+		<form method="post">
+			<input type="hidden" id="timestamp">
+		</form>
+	</li>
+</ul>
+
+
+<ul>
+	{% for error in errors %}
+	<li>{{error}}</li>
+	{% endfor %}
+</ul>
+
+
+{% load static %}
+
+<script src="{% static 'js/showPosts.js' %} "></script>
+{% endblock %}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}Title of Page{% endblock %}</title>
+	
+	<!--Bootstrap library is utilized in this html file-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	{% block css_file %}<link rel="stylesheet" href="../static/css/forum_style.css">{% endblock %}
+	<meta charset="utf-8" />
+</head>
+<body>
+	<!--Bootstrap library is utilized in the navigational bar-->
+	<!--Resource: https://getbootstrap.com/docs/4.1/components/navbar/-->
+	<nav class="nav nav-tabs">
+		{% block tab %}
+		<a class="nav-link" href="{% url 'home' %}">Home</a>
+		<a class="nav-link" href="{% url 'login' %}">Login</a>
+		<a class="nav-link" href="{% url 'register' %}">Register</a>
+		{% endblock %}
+	</nav>
+
+	{% block content %}
+	<br>
+	<ul>
+		<h1>Home</h1>
+	</ul>
+
+	<ul>
+		<li>
+			<div class="instruction">New User?</div>
+			<div>
+				<form action="{% url 'register' %}">
+					<input type="submit" value="Register" class="button1">
+				</form></div> 
+			<div class="instruction">Already Have An Account?</div>
+			<div>
+				<form action="{% url 'login' %}">
+					<input type="submit" value="Login" class="button1">
+				</form>
+			</div>
+			<div>You can see the users' profile only after you login~</div>
+		</li>
+		
+	{% for post in posts %}
+		<li>
+
+			<div class="comment_img">
+				<img src="{% url 'photo' post.user.id %}" class="profile_img" alt="Profile">
+				{{ post.user.username }}
+			</div>
+			<div class="comment_txt">
+				{{ post.comment }}
+				<span class="time">{{ post.time }}</span>
+			</div>
+		
+		</li>
+	{% endfor %}
+	</ul>
+	{% endblock %}
+</body>
+</html>

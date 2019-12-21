@@ -1,0 +1,5 @@
+{
+	"id":{{item.id}}, 
+	"deleted":{{item.deleted|lower}}, 
+	"html":"{{item.html}}"
+}

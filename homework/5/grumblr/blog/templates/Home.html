@@ -1,0 +1,50 @@
+{% extends "Base.html" %}
+
+{% block title %}Home Page{% endblock %}
+
+{% block css_file %}<link rel="stylesheet" href="../static/css/forum_style.css">{% endblock %}
+
+{% block tab %}
+	<a class="nav-link" href="{% url 'home' %}">Home</a>
+	<a class="nav-link" href="{% url 'login' %}">Login</a>
+	<a class="nav-link" href="{% url 'register' %}">Register</a>
+{% endblock %}
+
+{% block content %}
+	<br>
+	<ul>
+		<h1>Home</h1>
+	</ul>
+
+	<ul>
+		<li>
+			<div class="instruction">New User?</div>
+			<div>
+				<form action="{% url 'register' %}">
+					<input type="submit" value="Register" class="button1">
+				</form></div> 
+			<div class="instruction">Already Have An Account?</div>
+			<div>
+				<form action="{% url 'login' %}">
+					<input type="submit" value="Login" class="button1">
+				</form>
+			</div>
+			<div>You can see the users' profile only after you login~</div>
+		</li>
+		
+	{% for post in posts %}
+		<li>
+
+			<div class="comment_img">
+				<img src="{% url 'photo' post.user.id %}" class="profile_img" alt="Profile">
+				{{ post.user.username }}
+			</div>
+			<div class="comment_txt">
+				{{ post.comment }}
+				<span class="time">{{ post.time }}</span>
+			</div>
+		
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}

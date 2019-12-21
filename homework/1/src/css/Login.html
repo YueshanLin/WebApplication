@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page</title>
+	<!--Bootstrap library is utilized in this html file-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<meta charset="utf-8" />
+	<style>
+		body {
+			background-image: url(../image/Background2.jpg);
+			background-repeat: repeat-y;
+		}
+		li {
+			list-style:none;
+		}
+		input[type="text"] {
+			width:300px;
+			padding:8px;
+			margin:5px;
+			border-radius:5px;
+			border:1px solid #dddddd;
+		}
+		input[type="button"] {
+			width:150px;
+			border-radius:5px;
+			background-color:tomato;
+			color:white;
+		}
+		input[type="submit"] {
+			width:150px;
+			border-radius:5px;
+			background-color:tomato;
+			color:white;
+		}
+		input[type="button"]:hover {
+			width:150px;
+			border-radius:5px;
+			background-color:#A00000;
+			color:white;
+		}
+		input[type="submit"]:hover {
+			width:150px;
+			border-radius:5px;
+			background-color:#A00000;
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<!--Bootstrap library is utilized in the navigational bar-->
+	<!--Resource: https://getbootstrap.com/docs/4.1/components/navbar/-->
+	<nav class="nav nav-tabs">
+		<a class="nav-link" href="Home.html">Home</a>
+		<a class="nav-link" href="Forums.html">Forums</a> <!--href omitted-->
+		<a class="nav-link" href="Profile.html">Your Profile</a>
+		<a class="nav-link" href="Login.html">Login</a>
+		<a class="nav-link" href="Registration.html">Register</a>
+		<a class="nav-link" href="Logout.html">Logout</a>
+	</nav>
+	<br>
+
+	<h1>&nbsp&nbsp&nbsp&nbsp Login</h1>
+	<ul>
+		<li>
+			<div>
+				<form action="Login.html" method="POST"> 
+					Username:<br>
+					<input type="text" name="username" placeholder="Username"><br>
+					Password<br>
+					<input type="text" name="password" placeholder="Password"><br><br>
+					<input type="submit">
+				</form>
+				<br>
+				<p>New User?</p>
+				<form> <!--here, set aside the "action" and "method" attribute-->
+					<input type="button" value="Register" onclick="location.href='Registration.html'">
+				</form>
+			</div>
+		</li>
+	</ul>
+
+
+
+
+	
+
+	
+</body>
+</html>
